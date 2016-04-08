@@ -11,17 +11,18 @@ go get github.com/is73/cfg
 first word is key name  
 any whitespace, space or tab is key value separator  
 anything after separator is value of key  
-```
-# a comment
+```bash
+# sample config file comment
 key1	value1
 key2 value2
-# next line is ignored
+# line without value is ignored
 d
 # empty line is ignored
 
 key3 value3
 key4 value4
 key5 value5 value5	value5
+
 ```
 
 
