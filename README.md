@@ -6,11 +6,15 @@
 go get github.com/is73/cfg
 ```
 
+**Test:**
+```
+go test github.com/is73/cfg
+```
 
-**Config file example:**  
-* First word is key name, can't contain whitespace  
-* Any whitespace after first word, space or tab (even multiple) is key value separator  
-* Anything after separator is value of key  
+**Config file example:**
+* First word is key name, can't contain whitespace
+* Any whitespace after first word, space or tab (even multiple) is key value separator
+* Anything after separator is value of key
 * Values may contain whitespace characters
 * Lines without value are ignored
 * Empty lines are ignored
@@ -38,7 +42,7 @@ import (
 	"github.com/is73/cfg"
 )
 func main() {
-	
+
 	config := cfg.Read("config.txt")
 
 	fmt.Println("Printing all:")
