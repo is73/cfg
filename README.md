@@ -1,4 +1,4 @@
-**Simple config file reader for Golang applications**
+###Simple config file reader for Golang applications**
 
 ![](https://travis-ci.org/is73/cfg.svg?branch=master)
 
