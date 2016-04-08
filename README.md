@@ -37,13 +37,14 @@ import (
 	"github.com/is73/cfg"
 )
 func main() {
+	
 	config := cfg.Read("config.txt")
 
 	fmt.Println("Printing all:")
 	for k, v := range config {
 		fmt.Printf("'%s':'%s'\n", k, v)
 	}
-	// printing single key value
+
 	fmt.Println("\nPrinting particular key:")
 	fmt.Printf("Value of key3 is: %s\n", config["key3"])
 }
