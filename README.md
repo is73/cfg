@@ -20,17 +20,18 @@ go test github.com/is73/cfg
 * Lines without value are ignored
 * Empty lines are ignored
 ```bash
-# sample config file comment
+# a comment
 key1	value1
 key2 value2
-# line without value is ignored
+# next line is ignored
 d
 # empty line is ignored
 
 key3 value3
 key4 value4
 key5 value5 value5	value5
-
+user.name username
+k v
 ```
 
 
@@ -63,6 +64,8 @@ Printing all:
 'key3':'value3'
 'key4':'value4'
 'key5':'value5 value5	value5'
+'user.name':'username'
+'k':'v'
 
 Printing particular key:
 Value of key3 is: value3
