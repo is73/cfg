@@ -1,7 +1,8 @@
-###Simple config file reader for Golang applications**
+###Simple config file reader for Golang applications
 *Ordinary users won't learn syntax of json, xml, yaml, toml, whateverML
 to create or edit config files.*
 
+---
 
 **Installation:**
 ```
