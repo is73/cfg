@@ -49,4 +49,17 @@ func main() {
 	fmt.Println("\nPrinting particular key:")
 	fmt.Printf("Value of key3 is: %s\n", config["key3"])
 }
+
+/*
+Output:
+Printing all:
+'key1':'value1'
+'key2':'value2'
+'key3':'value3'
+'key4':'value4'
+'key5':'value5 value5	value5'
+
+Printing particular key:
+Value of key3 is: value3
+*/
 ```
