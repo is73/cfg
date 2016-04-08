@@ -8,9 +8,11 @@ go get github.com/is73/cfg
 
 
 **Config file example:**  
-first word is key name  
-any whitespace, space or tab is key value separator  
-anything after separator is value of key  
+* First word is key name, can't contain whitespace  
+* Any whitespace after first word, space or tab (even multiple) is key value separator  
+* Anything after separator is value of key  
+* Lines without value are ignored
+* Empty lines are ignored
 ```bash
 # sample config file comment
 key1	value1
@@ -36,8 +38,13 @@ import (
 )
 func main() {
 	config := cfg.Read("config.txt")
+
+	fmt.Println("Printing all:")
 	for k, v := range config {
 		fmt.Printf("'%s':'%s'\n", k, v)
 	}
+	// printing single key value
+	fmt.Println("\nPrinting particular key:")
+	fmt.Printf("Value of key3 is: %s\n", config["key3"])
 }
 ```
