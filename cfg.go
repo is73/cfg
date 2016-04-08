@@ -17,13 +17,13 @@ func Read(fileName string) map[string]string {
 	}
 	defer f.Close()
 
-	config := make(map[string]string, 10)
+	config := make(map[string]string, 20)
 	re := regexp.MustCompile(`[\s\t]+`)
 	lines := bufio.NewScanner(f)
 
 	for lines.Scan() {
 		line := strings.TrimSpace(lines.Text())
-		if !strings.HasPrefix(line, "#") && len(line) > 1 {
+		if !strings.HasPrefix(line, "#") && len(line) >= 3 {
 			pair := re.Split(line, 2)
 			key := strings.TrimSpace(pair[0])
 			val := strings.TrimSpace(pair[1])
