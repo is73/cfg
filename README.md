@@ -25,7 +25,7 @@ key5 value5 value5	value5
 ```
 
 
-**Reading configuration:**
+**Reading config file:**
 ```go
 package main
 
@@ -36,7 +36,7 @@ import (
 func main() {
 	config := cfg.Read("config.txt")
 	for k, v := range config {
-		fmt.Println("'"+k+"'", ":", "'"+v+"'")
+		fmt.Printf("'%s':'%s'\n", k, v)
 	}
 }
 ```
