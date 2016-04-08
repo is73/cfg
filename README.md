@@ -1,4 +1,4 @@
-**Simple config file reader for Golang applications**
+**Simplest config file reader for Golang applications**
 
 
 **Installation:**
