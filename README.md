@@ -1,6 +1,7 @@
 ###Simple config file reader for Golang applications**
 
 
+
 **Installation:**
 ```
 go get github.com/is73/cfg
