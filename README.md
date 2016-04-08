@@ -11,6 +11,7 @@ go get github.com/is73/cfg
 * First word is key name, can't contain whitespace  
 * Any whitespace after first word, space or tab (even multiple) is key value separator  
 * Anything after separator is value of key  
+* Values may contain whitespace characters
 * Lines without value are ignored
 * Empty lines are ignored
 ```bash
