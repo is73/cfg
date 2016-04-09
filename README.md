@@ -15,18 +15,19 @@ go test github.com/is73/cfg
 ```
 
 **Config file example:**
-* First word is key name, can't contain whitespace
+* First word on line is a key name, can't contain white space
 * Key duplicity is not allowed
-* Any whitespace after first word, space or tab (even multiple) is key value separator
-* Anything after separator is value of key
-* Values may contain whitespace characters
+* Any white space after first word, space or tab (even multiple), is a key value separator
+* Anything after separator is value of the key
+* Values may contain white space characters
 * Lines without value are ignored
 * Empty lines are ignored
+
 ```bash
 # a comment line
 key1	value1
 key2 value2
-# next line is ignored, value missing
+# next line is ignored, value is missing
 keyX
 # empty line is ignored
 
