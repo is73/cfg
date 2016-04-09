@@ -2,6 +2,7 @@ package cfg
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"regexp"
@@ -11,6 +12,7 @@ import (
 // Read reads config file and returns its contents
 // as map a.k.a associative array of keys and values
 func Read(fileName string) map[string]string {
+
 	f, err := os.Open(fileName)
 	if err != nil {
 		log.Panic("Config file error: ", err)
@@ -23,12 +25,12 @@ func Read(fileName string) map[string]string {
 
 	for lines.Scan() {
 		line := strings.TrimSpace(lines.Text())
-		if pair := re.FindStringSubmatch(line); pair != nil {
-			if !strings.HasPrefix(line, "#") {
-				key := strings.TrimSpace(pair[1])
-				val := strings.TrimSpace(pair[2])
-				config[key] = val
-			}
+		pair := re.FindStringSubmatch(line)
+		if pair != nil && strings.HasPrefix(pair[0], "#") == false {
+			key := strings.TrimSpace(pair[1])
+			val := strings.TrimSpace(pair[2])
+			config[key] = val
+
 		}
 	}
 

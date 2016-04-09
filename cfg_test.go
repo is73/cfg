@@ -1,6 +1,7 @@
 package cfg
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -22,6 +23,9 @@ func Test_Read(t *testing.T) {
 		if test.val != config[test.key] {
 			t.Errorf("For: %s expected: %s, got: %s", test.key, test.val, config[test.key])
 		}
+	}
+	for k, v := range config {
+		fmt.Printf("'%s':'%s'\n", k, v)
 	}
 }
 
