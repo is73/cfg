@@ -18,16 +18,18 @@ func Read(fileName string) map[string]string {
 	defer f.Close()
 
 	config := make(map[string]string, 20)
-	re := regexp.MustCompile(`[\s\t]+`)
+	//re := regexp.MustCompile(`[\s\t]+`)
+	re := regexp.MustCompile(`([^\s]+)[\s\t]+([^\n]+)`)
 	lines := bufio.NewScanner(f)
 
 	for lines.Scan() {
 		line := strings.TrimSpace(lines.Text())
-		if !strings.HasPrefix(line, "#") && len(line) >= 3 {
-			pair := re.Split(line, 2)
-			key := strings.TrimSpace(pair[0])
-			val := strings.TrimSpace(pair[1])
-			config[key] = val
+		if pair := re.FindStringSubmatch(line); pair != nil {
+			if !strings.HasPrefix(line, "#") {
+				key := strings.TrimSpace(pair[1])
+				val := strings.TrimSpace(pair[2])
+				config[key] = val
+			}
 		}
 	}
 

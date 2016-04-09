@@ -2,7 +2,7 @@
 key1	value1
 key2 value2
 # next line is ignored
-d
+ddd
 # empty line is ignored
 
 key3 value3
