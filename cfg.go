@@ -18,7 +18,6 @@ func Read(fileName string) map[string]string {
 	defer f.Close()
 
 	config := make(map[string]string, 20)
-	//re := regexp.MustCompile(`[\s\t]+`)
 	re := regexp.MustCompile(`([^\s]+)[\s\t]+([^\n]+)`)
 	lines := bufio.NewScanner(f)
 
