@@ -18,7 +18,10 @@ func Test_Read(t *testing.T) {
 		{"key6.user", "username"},
 		{"key6.db", "mydb"},
 	}
-	config := Read("config.txt")
+	config, err := Read("config.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
 	for _, test := range tests {
 		if test.val != config[test.key] {
 			t.Errorf("For: %s expected: %s, got: %s", test.key, test.val, config[test.key])
@@ -30,5 +33,5 @@ func Test_Read(t *testing.T) {
 }
 
 func Benchmark_Read(b *testing.B) {
-	_ = Read("config.txt")
+	_, _ = Read("config.txt")
 }

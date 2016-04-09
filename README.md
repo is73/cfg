@@ -16,6 +16,7 @@ go test github.com/is73/cfg
 
 **Config file example:**
 * First word is key name, can't contain whitespace
+* Key duplicity is not allowed
 * Any whitespace after first word, space or tab (even multiple) is key value separator
 * Anything after separator is value of key
 * Values may contain whitespace characters
@@ -46,9 +47,13 @@ import (
 	"fmt"
 	"github.com/is73/cfg"
 )
+
 func main() {
 
-	config := cfg.Read("config.txt")
+	config, err := cfg.Read("config.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	for k, v := range config {
 		fmt.Printf("'%s':'%s'\n", k, v)
