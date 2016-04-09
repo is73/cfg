@@ -15,8 +15,8 @@ func Test_Read(t *testing.T) {
 		{"key3", "value3"},
 		{"key4", "value4"},
 		{"key5", "value5 value5\tvalue5"},
-		{"user.name", "username"},
-		{"k", "v"},
+		{"key6.user", "username"},
+		{"key6.db", "mydb"},
 	}
 	config := Read("config.txt")
 	for _, test := range tests {

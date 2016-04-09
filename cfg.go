@@ -2,7 +2,6 @@ package cfg
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"regexp"
@@ -30,7 +29,6 @@ func Read(fileName string) map[string]string {
 			key := strings.TrimSpace(pair[1])
 			val := strings.TrimSpace(pair[2])
 			config[key] = val
-
 		}
 	}
 

@@ -22,18 +22,19 @@ go test github.com/is73/cfg
 * Lines without value are ignored
 * Empty lines are ignored
 ```bash
-# a comment
+# a comment line
 key1	value1
 key2 value2
-# next line is ignored
-d
+# next line is ignored, value missing
+keyX
 # empty line is ignored
 
 key3 value3
 key4 value4
 key5 value5 value5	value5
-user.name username
-k v
+
+key6.user username
+key6.db		mydb
 ```
 
 
@@ -49,27 +50,23 @@ func main() {
 
 	config := cfg.Read("config.txt")
 
-	fmt.Println("Printing all:")
 	for k, v := range config {
 		fmt.Printf("'%s':'%s'\n", k, v)
 	}
 
-	fmt.Println("\nPrinting particular key:")
-	fmt.Printf("Value of key3 is: %s\n", config["key3"])
+	fmt.Printf("\nValue of key3 is: %s\n", config["key3"])
 }
 
 /*
-Output:
-Printing all:
+Sample output:
 'key1':'value1'
+'key6.user':'username'
+'key6.db':'mydb'
 'key2':'value2'
 'key3':'value3'
 'key4':'value4'
 'key5':'value5 value5	value5'
-'user.name':'username'
-'k':'v'
 
-Printing particular key:
 Value of key3 is: value3
 */
 ```
