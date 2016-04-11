@@ -28,55 +28,11 @@ go test github.com/is73/cfg
 * Empty lines are ignored
 
 ```bash
-# a comment line
-key1	value1
-key2 value2
-# next line is ignored, value is missing
-keyX
-# empty line is ignored
-
-key3 value3
-key4 value4
-key5 value5 value5	value5
-
-key6.user username
-key6.db		mydb
+See [config.txt](https://github.com/is73/cfg/example/main.go) in examples
 ```
 
 
 **Reading config file:**
-```go
-package main
-
-import (
-	"fmt"
-	"github.com/is73/cfg"
-)
-
-func main() {
-
-	config, err := cfg.Read("config.txt")
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	for k, v := range config {
-		fmt.Printf("'%s':'%s'\n", k, v)
-	}
-
-	fmt.Printf("\nValue of key3 is: %s\n", config["key3"])
-}
-
-/*
-Sample output:
-'key1':'value1'
-'key6.user':'username'
-'key6.db':'mydb'
-'key2':'value2'
-'key3':'value3'
-'key4':'value4'
-'key5':'value5 value5	value5'
-
-Value of key3 is: value3
-*/
+```
+See [main.go](https://github.com/is73/cfg/example/main.go) in examples
 ```
