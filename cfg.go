@@ -27,18 +27,18 @@ func Read(fileName string) (map[string]string, error) {
 	for lines.Scan() {
 
 		line := strings.TrimSpace(lines.Text())
-		pair := re.FindStringSubmatch(line)
+		kv := re.FindStringSubmatch(line)
 		counter++
 
-		if pair != nil && strings.HasPrefix(pair[0], "#") == false {
-			key := strings.TrimSpace(pair[1])
-			val := strings.TrimSpace(pair[2])
-			if _, ok := config[key]; ok {
+		if kv != nil && strings.HasPrefix(kv[0], "#") == false {
+			k := strings.TrimSpace(kv[1])
+			v := strings.TrimSpace(kv[2])
+			if _, ok := config[k]; ok {
 				// duplicity, return error
-				err := fmt.Errorf("Duplicity for key: %s on line %d", key, counter)
+				err := fmt.Errorf("Duplicity for key: %s on line %d", k, counter)
 				return nil, err
 			}
-			config[key] = val
+			config[k] = v
 		}
 	}
 
