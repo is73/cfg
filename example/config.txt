@@ -12,4 +12,4 @@ user.surname doe
 smtp_server		smtp.example.com
 smtp_port 		25
 smtp_user		info@example.com
-smtp_password	harDtoGueSs
+smtp_password			harDtoGueSs
