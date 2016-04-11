@@ -27,12 +27,10 @@ go test github.com/is73/cfg
 * Lines without value are ignored
 * Empty lines are ignored
 
-```bash
 See [config.txt](https://github.com/is73/cfg/example/main.go) in examples
-```
 
 
 **Reading config file:**
-```
+
 See [main.go](https://github.com/is73/cfg/example/main.go) in examples
-```
+
