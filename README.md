@@ -1,9 +1,7 @@
 ###Simple config file reader for Golang applications
 
 
-[![Build Status](https://travis-ci.org/is73/cfg.svg?branch=master)](https://travis-ci.org/is73/cfg)
-
-[![GoDoc](https://godoc.org/github.com/is73/cfg?status.svg)](https://godoc.org/github.com/is73/cfg)
+[![Build Status](https://travis-ci.org/is73/cfg.svg?branch=master)](https://travis-ci.org/is73/cfg) [![GoDoc](https://godoc.org/github.com/is73/cfg?status.svg)](https://godoc.org/github.com/is73/cfg)
 
 *Ordinary users forget quotes, separators, braces and don't want to learn
 syntax of json, xml, yaml, toml, whateverML to create or edit config files.*
