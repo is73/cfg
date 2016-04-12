@@ -20,6 +20,7 @@ go test github.com/is73/cfg
 
 **Config file example:**
 * First word on line is a key name, can't contain white space
+* Keyword section emulation using keyword prefix
 * Key duplicity is not allowed
 * Any white space after first word, space or tab (even multiple), is a key value separator
 * Anything after separator is value of the key
