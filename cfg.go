@@ -1,3 +1,5 @@
+// Package cfg provides function(s) to read specific key/value configuration
+// file format similar to .INI files for Go applications
 package cfg
 
 import (
