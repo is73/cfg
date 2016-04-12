@@ -28,10 +28,79 @@ go test github.com/is73/cfg
 * Lines without value are ignored
 * Empty lines are ignored
 
+```bash
+# this is a comment line
+# file contains intentional spaces and tabs
+key1 value1
+key2	value2
+key3		value3 value3	value3
+# next line is ignored, value is missing
+keynoval
+user.id 1
+user.name john
+user.surname doe
+# next empty line is ignored
+
+smtp_server		smtp.example.com
+smtp_port 		25
+smtp_user		info@example.com
+smtp_password		harDtoGueSs
+```
 See [config.txt](https://github.com/is73/cfg/blob/master/example/config.txt) in examples
 
 
 **Reading config file:**
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/is73/cfg"
+)
+
+func main() {
+
+	fmt.Println("Output, prefix unused:")
+	config, err := cfg.Read("config.txt", "")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for k, v := range config {
+		fmt.Printf("'%s':'%s'\n", k, v)
+	}
+
+	fmt.Println("\nOutput, prefix used:")
+	config, err = cfg.Read("config.txt", "user.")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for k, v := range config {
+		fmt.Printf("'%s':'%s'\n", k, v)
+	}
+}
+
+/*
+Output, prefix unused:
+'key1':'value1'
+'key2':'value2'
+'key3':'value3 value3		value3'
+'user.id':'1'
+'user.name':'john'
+'user.surname':'doe'
+'smtp_port':'25'
+'smtp_password':'harDtoGueSs'
+'smtp_user':'info@example.com'
+'smtp_server':'smtp.example.com'
+
+Output, prefix used:
+'user.id':'1'
+'user.name':'john'
+'user.surname':'doe'
+*/
+```
 
 See [main.go](https://github.com/is73/cfg/blob/master/example/main.go) in examples
 
