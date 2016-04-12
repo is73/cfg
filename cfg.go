@@ -33,12 +33,12 @@ func Read(fileName, keyPrefix string) (map[string]string, error) {
 
 		if kv != nil && strings.HasPrefix(kv[0], "#") == false {
 			k := strings.TrimSpace(kv[1])
-			val := strings.TrimSpace(kv[2])
+			v := strings.TrimSpace(kv[2])
 			if _, ok := config[k]; ok {
 				err := fmt.Errorf("Dup key: %s, line %d", k, ln)
 				return nil, err
 			}
-			config[k] = val
+			config[k] = v
 		}
 	}
 	return config, nil
