@@ -23,7 +23,7 @@ go test github.com/is73/cfg
 * Keyword section emulation using keyword prefix
 * Key duplicity is not allowed
 * Any white space after first word, space or tab (even multiple), is a key value separator
-* Anything after separator is value of the key
+* Anything after separator except new line character is the value of the key
 * Values may contain white space characters
 * Lines without value are ignored
 * Empty lines are ignored
