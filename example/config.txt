@@ -2,7 +2,7 @@
 # file contains intentional spaces and tabs
 key1 value1
 key2	value2
-key3		value3 value3		value3
+key3		value3 value3	value3
 # next line is ignored, value is missing
 keynoval
 user.id 1
