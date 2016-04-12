@@ -11,9 +11,10 @@ import (
 	"strings"
 )
 
-// Read reads config file and returns its contents
-// as map a.k.a associative array of keys and values
-// keyPrefix is optional, default ""
+// Read reads config file and returns its contents as map a.k.a associative
+// array of keys and values.
+// fileName is mandatory.
+// keyPrefix is optional, default "".
 func Read(fileName, keyPrefix string) (map[string]string, error) {
 
 	f, err := os.Open(fileName)
