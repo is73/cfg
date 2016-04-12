@@ -13,9 +13,7 @@ import (
 
 // Read reads config file and returns its contents as Go map, a.k.a associative
 // array of keys and values. Use keyPrefix to emulate sections.
-//
-// fileName is mandatory.
-// keyPrefix is optional, default "".
+// fileName is mandatory. keyPrefix is optional.
 func Read(fileName, keyPrefix string) (map[string]string, error) {
 
 	f, err := os.Open(fileName)
