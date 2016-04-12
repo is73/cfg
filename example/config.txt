@@ -1,4 +1,4 @@
-# a comment line
+# this is a comment line
 # file contains intentional spaces and tabs
 key1 value1
 key2	value2
