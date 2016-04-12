@@ -11,8 +11,9 @@ import (
 	"strings"
 )
 
-// Read reads config file and returns its contents as map a.k.a associative
-// array of keys and values.
+// Read reads config file and returns its contents as Go map, a.k.a associative
+// array of keys and values. Use keyPrefix to emulate sections.
+//
 // fileName is mandatory.
 // keyPrefix is optional, default "".
 func Read(fileName, keyPrefix string) (map[string]string, error) {
