@@ -18,7 +18,7 @@ func Test_Read(t *testing.T) {
 		{"key6.user", "username"},
 		{"key6.db", "mydb"},
 	}
-	config, err := Read("config.txt")
+	config, err := Read("config.txt", "")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -33,5 +33,5 @@ func Test_Read(t *testing.T) {
 }
 
 func Benchmark_Read(b *testing.B) {
-	_, _ = Read("config.txt")
+	_, _ = Read("config.txt", "")
 }
