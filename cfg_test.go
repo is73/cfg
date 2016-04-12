@@ -30,8 +30,26 @@ func Test_Read(t *testing.T) {
 			t.Errorf("For: %s expected: %s, got: %s", test.key, test.val, config[test.key])
 		}
 	}
-	for k, v := range config {
-		fmt.Printf("'%s':'%s'\n", k, v)
+}
+
+func Test_Read_Prefix(t *testing.T) {
+	var tests = []struct {
+		key string
+		val string
+	}{
+		{"smtp_server", "smtp.example.com"},
+		{"smtp_port", "25"},
+		{"smtp_user", "info@example.com"},
+		{"smtp_password", "harDtoGueSs"},
+	}
+	config, err := Read("example/config.txt", "smtp_")
+	if err != nil {
+		fmt.Println(err)
+	}
+	for _, test := range tests {
+		if test.val != config[test.key] {
+			t.Errorf("For: %s expected: %s, got: %s", test.key, test.val, config[test.key])
+		}
 	}
 }
 
