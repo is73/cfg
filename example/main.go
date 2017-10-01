@@ -8,8 +8,15 @@ import (
 
 func main() {
 
-	fmt.Println("Output, prefix unused:")
+	fmt.Println("Print particullar item (user name and surname):")
 	config, err := cfg.Read("config.txt", "")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(config["user.name"], config["user.surname"])
+
+	fmt.Println("\nOutput, prefix unused:")
+	config, err = cfg.Read("config.txt", "")
 	if err != nil {
 		fmt.Println(err)
 	}
