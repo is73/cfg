@@ -29,6 +29,7 @@ go test github.com/is73/cfg
 * Empty lines are ignored
 
 **Config file example:**
+
 See also
 [config.txt](https://github.com/is73/cfg/blob/master/example/config.txt) and
 [main.go](https://github.com/is73/cfg/blob/master/example/main.go)
