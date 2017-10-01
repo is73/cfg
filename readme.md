@@ -18,7 +18,7 @@ go get github.com/is73/cfg
 go test github.com/is73/cfg
 ```
 
-**Features**
+**Features:**
 * First word on line is a key name, can't contain white space
 * Sections can be emulated using key prefix
 * Key duplicity is not allowed
@@ -29,6 +29,11 @@ go test github.com/is73/cfg
 * Empty lines are ignored
 
 **Config file example:**
+See also
+[config.txt](https://github.com/is73/cfg/blob/master/example/config.txt) and
+[main.go](https://github.com/is73/cfg/blob/master/example/main.go)
+in example folder
+
 ```bash
 # this is a comment line
 # file contains intentional spaces and tabs
@@ -47,7 +52,3 @@ smtp_port 		25
 smtp_user		info@example.com
 smtp_password		harDtoGueSs
 ```
-See
-[config.txt](https://github.com/is73/cfg/blob/master/example/config.txt) and
-[main.go](https://github.com/is73/cfg/blob/master/example/main.go)
-in example folder
