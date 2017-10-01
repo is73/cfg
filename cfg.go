@@ -37,7 +37,7 @@ func Read(fileName, keyPrefix string) (map[string]string, error) {
 			k := strings.TrimSpace(kv[1])
 			v := strings.TrimSpace(kv[2])
 			if _, ok := config[k]; ok {
-				err := fmt.Errorf("Dup key: %s, line %d", k, ln)
+				err := fmt.Errorf("%s: dulicate key: %s, line %d ... exiting", fileName, k, ln)
 				return nil, err
 			}
 			config[k] = v

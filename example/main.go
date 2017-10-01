@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/is73/cfg"
 )
@@ -11,14 +12,14 @@ func main() {
 	fmt.Println("Print particullar item (user name and surname):")
 	config, err := cfg.Read("config.txt", "")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(config["user.name"], config["user.surname"])
 
 	fmt.Println("\nOutput, prefix unused:")
 	config, err = cfg.Read("config.txt", "")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(err)
 	}
 
 	for k, v := range config {
@@ -28,7 +29,7 @@ func main() {
 	fmt.Println("\nOutput, prefix used:")
 	config, err = cfg.Read("config.txt", "user.")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(err)
 	}
 
 	for k, v := range config {
