@@ -18,7 +18,7 @@ func Read(fileName, keyPrefix string) (map[string]string, error) {
 
 	f, err := os.Open(fileName)
 	if err != nil {
-		log.Panic(err)
+		log.Fatalln(err)
 	}
 	defer f.Close()
 
